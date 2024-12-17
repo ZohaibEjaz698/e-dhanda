@@ -1,11 +1,9 @@
-import Navbar from "./components/Navbar.jsx"
-import Hero from "./sections/Hero.jsx"
+import HomePage from './pages/HomePage.jsx'
 
 const App = () => {
   return (
     <>
-    <Navbar/>
-    <Hero/>
+    <HomePage/>
     </>
   )
 }

@@ -5,3 +5,14 @@
     background-color: #e9d3d5;
     color: #033043;
 }
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: #033043;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #fda521;
+    border-radius: 100px;
+}
+#aboutP{
+    color: #033043b2;
+}

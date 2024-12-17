@@ -2,7 +2,7 @@
 const Footer = () => {
   return (
     <>
-    <section className="flex items-center justify-between ml-[4rem] mr-[4rem] mt-[3rem] mb-[3rem] -sm:flex-col">
+    <section className="flex items-center justify-between ml-[4rem] mr-[4rem] mt-[4rem] mb-[3rem] -sm:flex-col">
         <h2 className="font-bold text-4xl max-w-[18rem] text-secondary">The <span className="text-accent2">E</span>-Dhanda Approach</h2>
         <h2 className="font-bold text-4xl max-w-[18rem] text-secondary -sm:mt-[3rem]">Your <span className="text-accent2">No.1</span> Place For Products</h2>
     </section>
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
     </footer>
     <div className="bg-accent2 h-[3rem] flex items-center justify-center">
-      <p className="font-semibold">&copy; 2025 Edhanda | All rights reserved | Made by Zohaib</p>
+      <p className="font-semibold">&copy; 2025 Edhanda | All rights reserved | Made by <u><a href="https://www.instagram.com/zohaib_3301/" target="_blank">Zohaib</a></u></p>
     </div>
     </>
   )
