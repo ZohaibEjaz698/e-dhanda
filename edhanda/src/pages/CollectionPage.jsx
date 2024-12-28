@@ -65,16 +65,11 @@ const CollectionPage = () => {
   }
 
     useEffect(() => {
-      setFilterProducts(products)
-    },[products])
-
-    useEffect(() =>{
+      setFilterProducts(products);
       applyFilter()
-    },[category,subCategory,search,showSearch])
-
-    useEffect(() => {
       sortProducts()
-    },[sortType])
+    },[products,category,subCategory,search,showSearch,sortType])
+    
   return (
     <>
     <Navbar/>

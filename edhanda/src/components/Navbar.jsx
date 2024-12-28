@@ -8,7 +8,7 @@ import ResponsiveMenu from "./ResponsiveMenu";
 import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
    const [isOpen,setIsOpen] = useState(false)
-   const {setShowSearch,getCartCount} = useContext(ShopContext);
+   const {setShowSearch,getCartCount,navigate} = useContext(ShopContext);
   return (
     <>
     <header className="bg-accent3 flex items-center justify-between h-16 pt-0">
@@ -22,8 +22,10 @@ const Navbar = () => {
         
         <button className="ml-10 mr-24 -md:ml-[12rem] -md:mt-3 -md:mr-0 flex -xs:ml-0">
           <IoSearch onClick={() => setShowSearch(true)} className="text-2xl text-primary mt-1.5 mr-8 font-bold transition-colors duration-300 ease-out hover:text-accent2"/>
-          <Link to={"/cart"}><FaShoppingCart onClick={getCartCount} className="text-2xl text-primary mt-1.5 mr-8 transition-colors duration-300 ease-out hover:text-accent2"/></Link>
-          <span className="-md:hidden"><Button text="Sign Up"/></span>
+          <Link to={"/cart"}>
+          <FaShoppingCart onClick={getCartCount} className="text-2xl text-primary mt-1.5 mr-8 transition-colors duration-300 ease-out hover:text-accent2"/>
+          </Link>
+          <span className="-md:hidden" onClick={()=>navigate("/login")}><Button text="Sign Up"/></span>
         </button>
         <MdMenu className="text-4xl text-primary mt-2.5 mr-8 hidden -md:block" onClick={() => setIsOpen(!isOpen)}/>
     </header>

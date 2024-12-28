@@ -66,7 +66,7 @@ const Cart = () => {
                 }
             </div>
             <div className="flex justify-end my-20">
-              <div className="w-full sm:w-[450px]">
+              <div className="w-full sm:w-[450px] mr-20 -xs:ml-8 -xs:mr-10">
                 <CartTotal/>
                 <div className="w-full text-end">
                   <button onClick={() => navigate("/place-order")} className="bg-accent2 text-primary px-6 font-medium py-2 rounded-full hover:bg-transparent hover:text-accent2 hover:border-2 hover:border-accent2 transition-colors duration-200 ease-linear -md:text-sm mt-8">CHECKOUT</button>

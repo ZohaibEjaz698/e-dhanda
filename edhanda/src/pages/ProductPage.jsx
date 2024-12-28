@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import RelatedProducts from "../components/RelatedProducts";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Product = () => {
   const { productId } = useParams();
@@ -31,6 +33,8 @@ const Product = () => {
   }, [products, productId]);
 
   return productData ? (
+    <>
+    <Navbar/>
     <div className="border-t-2 pt-10 transition-opacity ease-in opacity-100 duration-500">
       <div className="flex gap-12 flex-col sm:flex-row">
         <div className="flex flex-1 flex-col-reverse gap-3 sm:flex-row">
@@ -94,6 +98,8 @@ const Product = () => {
       
       <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
     </div>
+    <Footer/>
+  </>
   ) : <div className="opacity-0"></div>;
 };
 
