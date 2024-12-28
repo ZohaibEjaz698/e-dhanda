@@ -1,5 +1,6 @@
 import {motion,AnimatePresence} from "framer-motion"
 import { Link } from "react-router-dom"
+import Button from "./Button"
 const ResponsiveMenu = ({ isOpen }) => {
   return <AnimatePresence>
     {
@@ -11,12 +12,13 @@ const ResponsiveMenu = ({ isOpen }) => {
       transition={{duration:0.3}}
       className="absolute top-20 left-0 w-full h-screen z-20"
       >
-          <div className="text-xl font-semibold uppercase bg-accent2 text-primary py-10 m-6 rounded-3xl ">
+          <div className="text-xl font-semibold uppercase bg-accent3 text-primary py-10 m-6 rounded-3xl ">
             <ul className="flex flex-col items-center justify-center gap-12">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/collections">Collections</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/"><Button text="Sign Up"/></Link></li>
             </ul>
           </div>
       </motion.div>

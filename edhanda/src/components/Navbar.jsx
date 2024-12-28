@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { MdMenu } from "react-icons/md"
 import { FaShoppingCart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ResponsiveMenu from "./ResponsiveMenu";
+import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
    const [isOpen,setIsOpen] = useState(false)
-
+   const {setShowSearch,getCartCount} = useContext(ShopContext);
   return (
     <>
     <header className="bg-accent3 flex items-center justify-between h-16 pt-0">
@@ -20,9 +21,9 @@ const Navbar = () => {
         </nav>
         
         <button className="ml-10 mr-24 -md:ml-[12rem] -md:mt-3 -md:mr-0 flex -xs:ml-0">
-          <IoSearch className="text-2xl text-primary mt-2.5 mr-8 font-bold transition-colors duration-300 ease-out hover:text-accent2"/>
-          <FaShoppingCart className="text-2xl text-primary mt-2.5 mr-8 transition-colors duration-300 ease-out hover:text-accent2"/>
-          <Button text="Sign Up"/>
+          <IoSearch onClick={() => setShowSearch(true)} className="text-2xl text-primary mt-1.5 mr-8 font-bold transition-colors duration-300 ease-out hover:text-accent2"/>
+          <Link to={"/cart"}><FaShoppingCart onClick={getCartCount} className="text-2xl text-primary mt-1.5 mr-8 transition-colors duration-300 ease-out hover:text-accent2"/></Link>
+          <span className="-md:hidden"><Button text="Sign Up"/></span>
         </button>
         <MdMenu className="text-4xl text-primary mt-2.5 mr-8 hidden -md:block" onClick={() => setIsOpen(!isOpen)}/>
     </header>
