@@ -16,6 +16,7 @@ connectCloudinary()
 const allowedOrigins = ['http://localhost:5173', 'http://localhost:5714'];
 //middlewares
 app.use(cors({
+
     origin: (origin, callback) => {
         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
             callback(null, origin); // Allow the origin

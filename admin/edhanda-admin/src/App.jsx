@@ -23,8 +23,7 @@ const App = () => {
     <div className="bg-gray-50 min-h-screen">
       <ToastContainer/>
       {
-        token === ""?
-        <Login setToken={setToken}/>: <>
+       <>
         <Navbar setToken={setToken} />
         <hr />
         <div className="flex w-full">
