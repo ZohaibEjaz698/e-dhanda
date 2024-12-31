@@ -56,8 +56,9 @@ const Add = ({token}) => {
         }
 
       } catch (error) {
-        console.log(error);
-        toast.error(error.message)
+        console.log('Error response:', error.response);
+        console.log('Error message:', error.message);
+        toast.error(error.response ? error.response.data.message : error.message);
       }
   }
 

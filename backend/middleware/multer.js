@@ -1,18 +1,32 @@
 import multer from "multer";
 
-// Set up storage for uploaded files
+const fileFilter = (req, file, cb) => {
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif']; // Add permitted MIME types
+    if (allowedTypes.includes(file.mimetype)) {
+        cb(null, true); // Accept file
+    } else {
+        cb(new Error('Invalid file type. Only JPEG, PNG, and GIF are allowed.'), false); // Reject file
+    }
+};
+
+
+
+
 const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/'); 
+    },
     filename: function (req, file, cb) {
-        cb(null, file.originalname);
+        cb(null, Date.now() + '-' + file.originalname); 
     },
 });
 
 // Initialize multer
-export const upload = multer({ storage: storage });
+export const upload = multer({ 
+    storage: storage, 
+    fileFilter: fileFilter,
+    limits: {
+        fileSize: 5 * 1024 * 1024 // Limit the file size to 5MB (customize as needed)
+    }
+});
 
-app.post('/api/addProduct', upload.fields([
-    { name: 'image1', maxCount: 1 },
-    { name: 'image2', maxCount: 1 },
-    { name: 'image3', maxCount: 1 },
-    { name: 'image4', maxCount: 1 }
-]), addProduct);

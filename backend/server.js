@@ -28,6 +28,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization',"token"],
     credentials: true
 }));
+
 app.use(express.json());
 
 //api endpoint
